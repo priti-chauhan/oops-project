@@ -1,0 +1,106 @@
+#include<iostream>
+using namespace std;
+
+
+class Stack
+{
+public:
+
+int stack[10];
+int top=-1;
+int n;
+void push(int n)
+{
+	int val=0;
+	if(top >= n)
+	{
+		cout<<"\nOverflow!";
+	}
+	else
+	{
+		top = top + 1;
+		cout<<"\nEnter The Value ";
+		cin>>val;
+		stack[top] = val;
+		cout<<endl;
+		
+	}
+}
+
+void pop()
+{
+    cout<<"top="<<top<<endl;
+	if(top == -1)
+	{
+		cout<<"Underfow!";
+	}
+	else
+	{
+		top = top - 1;
+		cout<<"Value Popped!";
+	}
+}
+
+void show()
+{
+    int i;
+	if(top == -1)
+	{
+		cout<<"Stack is Empty!";
+	}
+	else
+	{
+		for(i=top;i>-1;i--)
+		{
+			cout<<stack[i]<<endl;
+		}
+	}
+}
+};
+
+int main()
+{
+    Stack s;
+
+    cout<<"Enter The size of stack ";
+	cin>>s.n;
+	s.n=s.n-1;
+
+    
+
+	
+s.push(s.n);
+    int choice=0;
+
+	while(choice != 4)
+	{
+		cout<<"\nSelect the operation given below...";
+		cout<<"\n1.Push\n2.Pop\n3.Show\n4.Exit";
+		cout<<"\nEnter Your Choice. ";
+		cin>>choice;
+
+		switch(choice)
+		{
+			case 1:
+				s.push(s.n);
+				break;
+
+			case 2:
+				s.pop();
+				break;
+
+			case 3:
+				s.show();
+				break;
+
+			case 4:
+				break;
+
+			default:
+				cout<<"\nInvalid Input Try Again...";
+		}
+		
+	}
+	return 0;
+}
+
